@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  AirportApp
+
+  Created by Leonardo Maia Pugliese on 30/04/21.
+  
+*/
+
+"idLabelTitle" = "ID do Aeroporto:";
+
+"latitudeLabelTitle" = "Latitude:";
+
+"longitudeLabelTitle" = "Longitude:";
+
+"airportNameLabelTitle" = "Nome do Aeroporto:";
+
+"cityLabelTitle" = "Cidade:";
+
+"countryIdLabelTitle" = "ID do País:";
+
+"nearestAirportLabelTitle" = "Aeroporto mais próximo:";
+
+"navigationAirportDetailTitle" = "Detalhes do Aeroporto";
+
+"airportsTabTitle" = "Aeroportos";
+
+"flightsTabTitle" = "Voos";
+
+"navigationAirportsMapTitle" = "Mapa dos Aeroportos";
+
+"navigationFlightsTitle" = "Voos";
+
+"settingsTabTitle" = "Configurações";
+
+"navigationSettingsTitle" = "Preferências do Usuário";
+
+"milesLabelTitleSettings" = "Milhas";
