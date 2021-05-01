@@ -32,17 +32,6 @@ final class AirportsMapViewModel: AirportsMapBaseViewModel {
     
     func getAirportPassthroughSubject() -> PassthroughSubject<(Airport), Never> { airportPassthroughSubject }
     
-    private func fetchNearestAirportInMeters(from airport: Airport, to airportAnnotationList: [AirportAnnotation]) -> AirportDistanceRelation? {
-        
-        let airportLocation = CLLocation(latitude: airport.latitude, longitude: airport.longitude)
-        
-        return airportAnnotationList.filter { airportAnnotation -> Bool in
-            airportAnnotation.airport != airport
-        }.map { (airportAnnotation) -> AirportDistanceRelation in
-            AirportDistanceRelation(name: airportAnnotation.airport.name, distanceInMeters:  airportLocation.distance(from: CLLocation(latitude: airportAnnotation.airport.latitude, longitude: airportAnnotation.airport.longitude)))
-        }.sorted {  $0.distanceInMeters < $1.distanceInMeters }.first
-    }
-    
     private func setupViewModelBindings(_ airportManager: AirportManagerProtocol, _ coordinator: AirportsBaseCoordinator) {
         
         airportManager.getAirports().sink { [weak self] completion in
@@ -59,11 +48,12 @@ final class AirportsMapViewModel: AirportsMapBaseViewModel {
         }.store(in: &bindings)
         
         airportPassthroughSubject.sink { [weak self] airport in
-            guard let annotations = self?.annotations else {
+            guard let annotations = self?.annotations, !annotations.isEmpty else {
                 self?.state = .error(MapError.noAirportsSaved)
                 return
             }
-            if let nearestAirportRelation = self?.fetchNearestAirportInMeters(from: airport, to: annotations) {
+            
+            if let nearestAirportRelation = AirportMapUtils.fetchNearestAirportInMeters(from: airport, to: annotations) {
                 coordinator.sendToAirportDetail(airport: airport, airportNearest: nearestAirportRelation)
             }
             

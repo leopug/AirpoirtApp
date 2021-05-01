@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnyOptional {
+fileprivate protocol AnyOptional {
     var isNil: Bool { get }
 }
 

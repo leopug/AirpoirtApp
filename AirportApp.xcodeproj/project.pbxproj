@@ -57,7 +57,20 @@
 		44B99DF6263CD5AD00A21C92 /* SettingsBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99DF5263CD5AD00A21C92 /* SettingsBaseViewModel.swift */; };
 		44B99DFB263CD5C300A21C92 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99DFA263CD5C300A21C92 /* SettingsViewModel.swift */; };
 		44B99DFF263CD78300A21C92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99DFE263CD78300A21C92 /* SettingsView.swift */; };
+		44B99E12263DC25C00A21C92 /* AirportMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E11263DC25C00A21C92 /* AirportMapViewModelTests.swift */; };
+		44B99E21263DC4B800A21C92 /* AirportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E20263DC4B800A21C92 /* AirportGenerator.swift */; };
+		44B99E28263DD43700A21C92 /* AirportMapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E27263DD43700A21C92 /* AirportMapUtils.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44B99E0A263DC21A00A21C92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44B99CBD263B5E1100A21C92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44B99CC4263B5E1200A21C92;
+			remoteInfo = AirportApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		44B99CC5263B5E1200A21C92 /* AirportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,10 +127,22 @@
 		44B99DF5263CD5AD00A21C92 /* SettingsBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBaseViewModel.swift; sourceTree = "<group>"; };
 		44B99DFA263CD5C300A21C92 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		44B99DFE263CD78300A21C92 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		44B99E05263DC21A00A21C92 /* AirportAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirportAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44B99E09263DC21A00A21C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B99E11263DC25C00A21C92 /* AirportMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMapViewModelTests.swift; sourceTree = "<group>"; };
+		44B99E20263DC4B800A21C92 /* AirportGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportGenerator.swift; sourceTree = "<group>"; };
+		44B99E27263DD43700A21C92 /* AirportMapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMapUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		44B99CC2263B5E1200A21C92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44B99E02263DC21A00A21C92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				44B99CC7263B5E1200A21C92 /* AirportApp */,
+				44B99E06263DC21A00A21C92 /* AirportAppUnitTests */,
 				44B99CC6263B5E1200A21C92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				44B99CC5263B5E1200A21C92 /* AirportApp.app */,
+				44B99E05263DC21A00A21C92 /* AirportAppUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,6 +357,7 @@
 			children = (
 				44B99D22263B684E00A21C92 /* Protocols */,
 				44B99D2E263B698300A21C92 /* AirportsMapViewModel.swift */,
+				44B99E27263DD43700A21C92 /* AirportMapUtils.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -641,6 +669,48 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		44B99E06263DC21A00A21C92 /* AirportAppUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				44B99E18263DC3B700A21C92 /* VIewModels */,
+				44B99E17263DC39000A21C92 /* Support */,
+				44B99E09263DC21A00A21C92 /* Info.plist */,
+			);
+			path = AirportAppUnitTests;
+			sourceTree = "<group>";
+		};
+		44B99E17263DC39000A21C92 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				44B99E1E263DC49D00A21C92 /* Airport */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		44B99E18263DC3B700A21C92 /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				44B99E19263DC3BC00A21C92 /* Airport */,
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
+		44B99E19263DC3BC00A21C92 /* Airport */ = {
+			isa = PBXGroup;
+			children = (
+				44B99E11263DC25C00A21C92 /* AirportMapViewModelTests.swift */,
+			);
+			path = Airport;
+			sourceTree = "<group>";
+		};
+		44B99E1E263DC49D00A21C92 /* Airport */ = {
+			isa = PBXGroup;
+			children = (
+				44B99E20263DC4B800A21C92 /* AirportGenerator.swift */,
+			);
+			path = Airport;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,6 +731,24 @@
 			productReference = 44B99CC5263B5E1200A21C92 /* AirportApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44B99E04263DC21A00A21C92 /* AirportAppUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44B99E0C263DC21A00A21C92 /* Build configuration list for PBXNativeTarget "AirportAppUnitTests" */;
+			buildPhases = (
+				44B99E01263DC21A00A21C92 /* Sources */,
+				44B99E02263DC21A00A21C92 /* Frameworks */,
+				44B99E03263DC21A00A21C92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44B99E0B263DC21A00A21C92 /* PBXTargetDependency */,
+			);
+			name = AirportAppUnitTests;
+			productName = AirportAppUnitTests;
+			productReference = 44B99E05263DC21A00A21C92 /* AirportAppUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -672,6 +760,10 @@
 				TargetAttributes = {
 					44B99CC4263B5E1200A21C92 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					44B99E04263DC21A00A21C92 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 44B99CC4263B5E1200A21C92;
 					};
 				};
 			};
@@ -690,6 +782,7 @@
 			projectRoot = "";
 			targets = (
 				44B99CC4263B5E1200A21C92 /* AirportApp */,
+				44B99E04263DC21A00A21C92 /* AirportAppUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -702,6 +795,13 @@
 				44B99CD5263B5E1400A21C92 /* LaunchScreen.storyboard in Resources */,
 				44B99D9D263C203700A21C92 /* Localizable.strings in Resources */,
 				44B99CD2263B5E1400A21C92 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44B99E03263DC21A00A21C92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +844,7 @@
 				44B99DF6263CD5AD00A21C92 /* SettingsBaseViewModel.swift in Sources */,
 				44B99D71263B92A100A21C92 /* AirportDetailViewController.swift in Sources */,
 				44B99D84263C171A00A21C92 /* AirportDetailView.swift in Sources */,
+				44B99E28263DD43700A21C92 /* AirportMapUtils.swift in Sources */,
 				44B99CC9263B5E1200A21C92 /* AppDelegate.swift in Sources */,
 				44B99D95263C1B1C00A21C92 /* TitleLabel.swift in Sources */,
 				44B99DA4263C233B00A21C92 /* Double+Extensions.swift in Sources */,
@@ -762,7 +863,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44B99E01263DC21A00A21C92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B99E12263DC25C00A21C92 /* AirportMapViewModelTests.swift in Sources */,
+				44B99E21263DC4B800A21C92 /* AirportGenerator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44B99E0B263DC21A00A21C92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44B99CC4263B5E1200A21C92 /* AirportApp */;
+			targetProxy = 44B99E0A263DC21A00A21C92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		44B99CD3263B5E1400A21C92 /* LaunchScreen.storyboard */ = {
@@ -942,6 +1060,46 @@
 			};
 			name = Release;
 		};
+		44B99E0D263DC21A00A21C92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZU6P9M66AC;
+				INFOPLIST_FILE = AirportAppUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.leo.AirportAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirportApp.app/AirportApp";
+			};
+			name = Debug;
+		};
+		44B99E0E263DC21A00A21C92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZU6P9M66AC;
+				INFOPLIST_FILE = AirportAppUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.leo.AirportAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirportApp.app/AirportApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -959,6 +1117,15 @@
 			buildConfigurations = (
 				44B99CDA263B5E1400A21C92 /* Debug */,
 				44B99CDB263B5E1400A21C92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44B99E0C263DC21A00A21C92 /* Build configuration list for PBXNativeTarget "AirportAppUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44B99E0D263DC21A00A21C92 /* Debug */,
+				44B99E0E263DC21A00A21C92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
