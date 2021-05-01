@@ -14,6 +14,7 @@ class TitleLabel: UILabel {
         textColor = .label
         font = .systemFont(ofSize: 24)
         numberOfLines = 2
+        lineBreakMode = .byTruncatingTail
     }
     
     required init?(coder: NSCoder) {

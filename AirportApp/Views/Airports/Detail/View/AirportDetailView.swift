@@ -20,7 +20,7 @@ final class AirportDetailView: UIView {
     private var airport: Airport!
     private var airportNearest: AirportDistanceRelation!
     private var leadingPadding: CGFloat = 15
-    private var trailingPadding: CGFloat = 15
+    private var trailingPadding: CGFloat = -15
     private var topPadding: CGFloat = 15
     
     
@@ -107,7 +107,7 @@ final class AirportDetailView: UIView {
         cityNameLabel.text = "\(ContextStrings.Airport.Detail.cityLabelTitle) \(airport.city)"
         
         NSLayoutConstraint.activate([
-            cityNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: trailingPadding),
+            cityNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -trailingPadding),
             cityNameLabel.topAnchor.constraint(equalTo: airportNameLabel.bottomAnchor, constant: topPadding),
             cityNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingPadding)
         ])
@@ -131,13 +131,17 @@ final class AirportDetailView: UIView {
         addSubview(nearestAirportLabel)
         nearestAirportLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        nearestAirportLabel.text = "\(ContextStrings.Airport.Detail.nearestAirportLabelTitle) \(airportNearest.name) - \(airportNearest.distanceInMeters.getFormattedDistance())"
+        updateNearestAirportLabel()
         
         NSLayoutConstraint.activate([
             nearestAirportLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: trailingPadding),
             nearestAirportLabel.topAnchor.constraint(equalTo: countryIdLabel.bottomAnchor, constant: topPadding),
             nearestAirportLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingPadding)
         ])
+    }
+    
+    func updateNearestAirportLabel() {
+        nearestAirportLabel.text = "\(ContextStrings.Airport.Detail.nearestAirportLabelTitle) \(airportNearest.name) [ \(airportNearest.distanceInMeters.getFormattedDistance()) ]"
     }
     
 }
