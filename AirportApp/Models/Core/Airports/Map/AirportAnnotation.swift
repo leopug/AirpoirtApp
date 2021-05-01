@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class AirportAnnotation: MKPointAnnotation {
+final class AirportAnnotation: MKPointAnnotation {
     var airport: Airport
 
     init(airport: Airport) {

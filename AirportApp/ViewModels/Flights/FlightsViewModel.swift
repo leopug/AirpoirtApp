@@ -9,17 +9,17 @@ import Foundation
 import Combine
 import CoreLocation
 
-class FlightsViewModel: FlightsViewModelProtocol {
+final class FlightsViewModel: FlightsViewModelProtocol {
     
     @Published private var state: ViewModelLoadingState = .loading
     @Published private var airportDistanceRelationList = [AirportDistanceRelation]()
+    @Published private var airportsList = [Airport]()
     
     private var airportManager: AirportManagerProtocol!
     private var coordinator: FlightsBaseCoordinator!
     private var flightsManager: FlightsManagerProtocol!
     private var bindings = Set<AnyCancellable>()
     
-    @Published private var airportsList = [Airport]()
 
     init(airportManager: AirportManagerProtocol = AirportManager(), flightsManager: FlightsManagerProtocol = FlightsManager(), coordinator: FlightsBaseCoordinator) {
         self.airportManager = airportManager
@@ -35,17 +35,11 @@ class FlightsViewModel: FlightsViewModelProtocol {
     
     func getViewModelStatePublisher() -> Published<ViewModelLoadingState>.Publisher { $state }
     
-
-    
     private func setupViewModelBindings(airportManager: AirportManagerProtocol, flightsManager: FlightsManagerProtocol) {
         $airportsList.sink {[weak self] _ in
             self?.setupFlightsManagerBinding(flightsManager: flightsManager)
         }.store(in: &bindings)
         
-        //                self?.state = .finishedLoading
-        //                self?.state = .finishedLoading
-        //                self?.state = .finishedLoading
-
         setupAirportManagerBinding(airportManager)
     }
     
@@ -60,7 +54,19 @@ class FlightsViewModel: FlightsViewModelProtocol {
                 self?.state = .error(error)
             }
         } receiveValue: { flightList in
-            self.airportDistanceRelationList = self.fetchFlightListResult(flightList: flightList)
+            
+            guard self.airportsList.count > 0 else {
+                self.state = .error(FlightError.parsingProblem)
+                return
+            }
+            
+            let airportDistanceRelationListResult = FlightsViewModelUtils.fetchFlightListResult(flightList: flightList,airportsList: self.airportsList)
+            
+            if airportDistanceRelationListResult.count > 0 {
+                self.airportDistanceRelationList = airportDistanceRelationListResult
+            } else {
+                self.state = .error(FlightError.noNearAirport)
+            }
         }.store(in: &bindings)
     }
     
@@ -76,39 +82,5 @@ class FlightsViewModel: FlightsViewModelProtocol {
         } receiveValue: { (airportList) in
             self.airportsList = airportList
         }.store(in: &bindings)
-    }
-    
-    private func fetchFlightListResult(flightList: [Flight], selectedAirportId: String = "AMS") -> [AirportDistanceRelation] {
-        guard airportsList.count > 0 else {
-            state = .error(FlightError.parsingProblem)
-            return [AirportDistanceRelation]()
-        }
-        var arrivalAirportIdSet = Set<String>()
-                
-        flightList.forEach {
-            if $0.departureAirportId == selectedAirportId {
-                arrivalAirportIdSet.insert($0.arrivalAirportId)
-            }
-        }
-        
-        guard let currentSchipholAirport = airportsList.first(where: {$0.id == selectedAirportId}) else {
-            state = .error(FlightError.parsingProblem)
-            return [AirportDistanceRelation]()
-        }
-        
-        return arrivalAirportIdSet.compactMap { (arrivalAirportId) -> AirportDistanceRelation? in
-            let airportFound = airportsList.first { airport -> Bool in
-                airport.id == arrivalAirportId
-            }
-            guard let airport = airportFound else { return nil }
-            
-            let schipholAirportLocation = CLLocation(latitude: currentSchipholAirport.latitude, longitude: currentSchipholAirport.longitude)
-            let currentAirportLocation = CLLocation(latitude: airport.latitude, longitude: airport.longitude)
-            
-            return AirportDistanceRelation(name: airport.name, distanceInMeters: schipholAirportLocation.distance(from: currentAirportLocation))
-        }.sorted { (lhs, rhs) -> Bool in
-            lhs.distanceInMeters < rhs.distanceInMeters
-        }
-        
     }
 }

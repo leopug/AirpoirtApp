@@ -143,5 +143,4 @@ final class AirportDetailView: UIView {
     func updateNearestAirportLabel() {
         nearestAirportLabel.text = "\(ContextStrings.Airport.Detail.nearestAirportLabelTitle) \(airportNearest.name) [ \(airportNearest.distanceInMeters.getFormattedDistance()) ]"
     }
-    
 }

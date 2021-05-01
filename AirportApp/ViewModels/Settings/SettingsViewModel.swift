@@ -26,5 +26,4 @@ final class SettingsViewModel: SettingsBaseViewModel {
             GlobalContext.isMilesSelected = isOn
         }.store(in: &bindings)
     }
-    
 }

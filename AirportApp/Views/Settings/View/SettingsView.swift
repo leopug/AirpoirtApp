@@ -45,7 +45,6 @@ class SettingsView: UIView {
             milesSwitchLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: topPadding),
             milesSwitchLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingPadding)
         ])
-        
     }
     
     private func configureMilesSwitch() {
@@ -60,7 +59,6 @@ class SettingsView: UIView {
             milesSwitch.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: topPadding),
             milesSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -leadingPadding)
         ])
-
     }
     
     @objc func switchStateDidChange(_ sender:UISwitch!) {

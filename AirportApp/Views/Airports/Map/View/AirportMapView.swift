@@ -101,7 +101,7 @@ extension AirportMapView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         guard let annotation = view.annotation as? AirportAnnotation else { return }
+        
         airportPassthroughSubject?.send(annotation.airport)
     }
-    
 }

@@ -9,4 +9,5 @@ import Foundation
 
 enum MapError: Error {
     case noAirportsSaved
+    case noNearAirports
 }

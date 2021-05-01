@@ -9,4 +9,5 @@ import Foundation
 
 enum FlightError: Error {
     case parsingProblem
+    case noNearAirport
 }

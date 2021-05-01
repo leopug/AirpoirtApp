@@ -16,8 +16,8 @@
 		44B99CF7263B61A900A21C92 /* AirportsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99CF6263B61A900A21C92 /* AirportsMapViewController.swift */; };
 		44B99CFC263B61C800A21C92 /* FlightsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99CFB263B61C800A21C92 /* FlightsCoordinator.swift */; };
 		44B99D01263B61FB00A21C92 /* FlightsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D00263B61FB00A21C92 /* FlightsBaseCoordinator.swift */; };
-		44B99D05263B62E100A21C92 /* AirportsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D04263B62E100A21C92 /* AirportsBaseCoordinator.swift */; };
-		44B99D08263B632300A21C92 /* AirportsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D07263B632300A21C92 /* AirportsCoordinator.swift */; };
+		44B99D05263B62E100A21C92 /* AirportBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D04263B62E100A21C92 /* AirportBaseCoordinator.swift */; };
+		44B99D08263B632300A21C92 /* AirportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D07263B632300A21C92 /* AirportCoordinator.swift */; };
 		44B99D16263B644500A21C92 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D15263B644500A21C92 /* MainCoordinator.swift */; };
 		44B99D19263B64B100A21C92 /* MainBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D18263B64B100A21C92 /* MainBaseCoordinator.swift */; };
 		44B99D1F263B683D00A21C92 /* AirportsBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99D1E263B683D00A21C92 /* AirportsBaseViewModel.swift */; };
@@ -59,7 +59,9 @@
 		44B99DFF263CD78300A21C92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99DFE263CD78300A21C92 /* SettingsView.swift */; };
 		44B99E12263DC25C00A21C92 /* AirportMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E11263DC25C00A21C92 /* AirportMapViewModelTests.swift */; };
 		44B99E21263DC4B800A21C92 /* AirportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E20263DC4B800A21C92 /* AirportGenerator.swift */; };
-		44B99E28263DD43700A21C92 /* AirportMapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E27263DD43700A21C92 /* AirportMapUtils.swift */; };
+		44B99E28263DD43700A21C92 /* AirportMapViewModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E27263DD43700A21C92 /* AirportMapViewModelUtils.swift */; };
+		44B99E32263DDE1D00A21C92 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E31263DDE1D00A21C92 /* Endpoint.swift */; };
+		44B99E3D263DE1BC00A21C92 /* FlightsViewModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B99E3C263DE1BC00A21C92 /* FlightsViewModelUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +86,8 @@
 		44B99CF6263B61A900A21C92 /* AirportsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsMapViewController.swift; sourceTree = "<group>"; };
 		44B99CFB263B61C800A21C92 /* FlightsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsCoordinator.swift; sourceTree = "<group>"; };
 		44B99D00263B61FB00A21C92 /* FlightsBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsBaseCoordinator.swift; sourceTree = "<group>"; };
-		44B99D04263B62E100A21C92 /* AirportsBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsBaseCoordinator.swift; sourceTree = "<group>"; };
-		44B99D07263B632300A21C92 /* AirportsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsCoordinator.swift; sourceTree = "<group>"; };
+		44B99D04263B62E100A21C92 /* AirportBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportBaseCoordinator.swift; sourceTree = "<group>"; };
+		44B99D07263B632300A21C92 /* AirportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCoordinator.swift; sourceTree = "<group>"; };
 		44B99D15263B644500A21C92 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		44B99D18263B64B100A21C92 /* MainBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBaseCoordinator.swift; sourceTree = "<group>"; };
 		44B99D1E263B683D00A21C92 /* AirportsBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsBaseViewModel.swift; sourceTree = "<group>"; };
@@ -131,7 +133,9 @@
 		44B99E09263DC21A00A21C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B99E11263DC25C00A21C92 /* AirportMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMapViewModelTests.swift; sourceTree = "<group>"; };
 		44B99E20263DC4B800A21C92 /* AirportGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportGenerator.swift; sourceTree = "<group>"; };
-		44B99E27263DD43700A21C92 /* AirportMapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMapUtils.swift; sourceTree = "<group>"; };
+		44B99E27263DD43700A21C92 /* AirportMapViewModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMapViewModelUtils.swift; sourceTree = "<group>"; };
+		44B99E31263DDE1D00A21C92 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		44B99E3C263DE1BC00A21C92 /* FlightsViewModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModelUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +254,8 @@
 		44B99CE9263B600A00A21C92 /* Airports */ = {
 			isa = PBXGroup;
 			children = (
-				44B99D04263B62E100A21C92 /* AirportsBaseCoordinator.swift */,
-				44B99D07263B632300A21C92 /* AirportsCoordinator.swift */,
+				44B99D04263B62E100A21C92 /* AirportBaseCoordinator.swift */,
+				44B99D07263B632300A21C92 /* AirportCoordinator.swift */,
 			);
 			path = Airports;
 			sourceTree = "<group>";
@@ -314,6 +318,7 @@
 			children = (
 				44B99D23263B686B00A21C92 /* Protocols */,
 				44B99DBC263C2C4500A21C92 /* FlightsViewModel.swift */,
+				44B99E3C263DE1BC00A21C92 /* FlightsViewModelUtils.swift */,
 			);
 			path = Flights;
 			sourceTree = "<group>";
@@ -357,7 +362,7 @@
 			children = (
 				44B99D22263B684E00A21C92 /* Protocols */,
 				44B99D2E263B698300A21C92 /* AirportsMapViewModel.swift */,
-				44B99E27263DD43700A21C92 /* AirportMapUtils.swift */,
+				44B99E27263DD43700A21C92 /* AirportMapViewModelUtils.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -367,7 +372,6 @@
 			children = (
 				44B99D65263B8EDE00A21C92 /* API */,
 				44B99D3A263B6A7800A21C92 /* Managers */,
-				44B99D34263B6A3D00A21C92 /* Protocols */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,6 +398,7 @@
 		44B99D3A263B6A7800A21C92 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				44B99D34263B6A3D00A21C92 /* Protocols */,
 				44B99DC2263C2CC300A21C92 /* Airport */,
 				44B99DC1263C2CBF00A21C92 /* Flights */,
 			);
@@ -467,6 +472,7 @@
 			children = (
 				44B99DAE263C261C00A21C92 /* Errors */,
 				44B99D6B263B8F8900A21C92 /* UrlRequestManager.swift */,
+				44B99E31263DDE1D00A21C92 /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -818,7 +824,8 @@
 				44B99DA8263C23CD00A21C92 /* UserDefaultPersistence.swift in Sources */,
 				44B99D1F263B683D00A21C92 /* AirportsBaseViewModel.swift in Sources */,
 				44B99DAC263C23E400A21C92 /* GlobalContext.swift in Sources */,
-				44B99D05263B62E100A21C92 /* AirportsBaseCoordinator.swift in Sources */,
+				44B99D05263B62E100A21C92 /* AirportBaseCoordinator.swift in Sources */,
+				44B99E32263DDE1D00A21C92 /* Endpoint.swift in Sources */,
 				44B99CF3263B616300A21C92 /* FlightsViewControllers.swift in Sources */,
 				44B99DB6263C2B1E00A21C92 /* ViewModelLoadingState.swift in Sources */,
 				44B99D36263B6A4B00A21C92 /* AirportManagerProtocol.swift in Sources */,
@@ -828,7 +835,8 @@
 				44B99D19263B64B100A21C92 /* MainBaseCoordinator.swift in Sources */,
 				44B99D6C263B8F8900A21C92 /* UrlRequestManager.swift in Sources */,
 				44B99DC4263C2CDD00A21C92 /* FlightsManagerProtocol.swift in Sources */,
-				44B99D08263B632300A21C92 /* AirportsCoordinator.swift in Sources */,
+				44B99D08263B632300A21C92 /* AirportCoordinator.swift in Sources */,
+				44B99E3D263DE1BC00A21C92 /* FlightsViewModelUtils.swift in Sources */,
 				44B99DDE263CB28E00A21C92 /* FlightError.swift in Sources */,
 				44B99DE5263CD2F700A21C92 /* SettingsBaseCoordinator.swift in Sources */,
 				44B99D7B263B9A2100A21C92 /* MapError.swift in Sources */,
@@ -844,7 +852,7 @@
 				44B99DF6263CD5AD00A21C92 /* SettingsBaseViewModel.swift in Sources */,
 				44B99D71263B92A100A21C92 /* AirportDetailViewController.swift in Sources */,
 				44B99D84263C171A00A21C92 /* AirportDetailView.swift in Sources */,
-				44B99E28263DD43700A21C92 /* AirportMapUtils.swift in Sources */,
+				44B99E28263DD43700A21C92 /* AirportMapViewModelUtils.swift in Sources */,
 				44B99CC9263B5E1200A21C92 /* AppDelegate.swift in Sources */,
 				44B99D95263C1B1C00A21C92 /* TitleLabel.swift in Sources */,
 				44B99DA4263C233B00A21C92 /* Double+Extensions.swift in Sources */,

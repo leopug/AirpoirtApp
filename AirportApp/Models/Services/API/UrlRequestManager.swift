@@ -7,15 +7,6 @@
 
 import Foundation
 
-enum Endpoint: String {
-    case airpoirt = "/test/airports.json"
-    case flights = "/test/flights.json"
-    
-    func getScheme() -> String { "https" }
-    
-    func getHost() -> String { "flightassets.datasavannah.com" }
-}
-
 struct UrlRequestManager {
     
     static func getUrlRequest(for endpoint: Endpoint) -> URLRequest? {

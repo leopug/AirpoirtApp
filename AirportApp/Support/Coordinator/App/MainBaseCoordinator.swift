@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainBaseCoordinator: Coordinator {
-    var airportsCoordinator: AirportsBaseCoordinator? { get }
+    var airportsCoordinator: AirportBaseCoordinator? { get }
     var flightsCoordinator: FlightsBaseCoordinator? { get }
     var settingsCoordinator: SettingsBaseCoordinator? { get }
 }

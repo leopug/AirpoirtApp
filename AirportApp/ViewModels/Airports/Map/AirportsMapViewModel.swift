@@ -14,11 +14,11 @@ final class AirportsMapViewModel: AirportsMapBaseViewModel {
     @Published private var state: ViewModelLoadingState = .loading
     @Published private var annotations = [AirportAnnotation]()
     private var airportManager: AirportManagerProtocol!
-    private var coordinator: AirportsBaseCoordinator!
+    private var coordinator: AirportBaseCoordinator!
     private var bindings = Set<AnyCancellable>()
     private var airportPassthroughSubject = PassthroughSubject<(Airport), Never>()
     
-    init(airportManager: AirportManagerProtocol = AirportManager(), coordinator: AirportsBaseCoordinator) {
+    init(airportManager: AirportManagerProtocol = AirportManager(), coordinator: AirportBaseCoordinator) {
         self.airportManager = airportManager
         self.coordinator = coordinator
         state = .loading
@@ -32,7 +32,7 @@ final class AirportsMapViewModel: AirportsMapBaseViewModel {
     
     func getAirportPassthroughSubject() -> PassthroughSubject<(Airport), Never> { airportPassthroughSubject }
     
-    private func setupViewModelBindings(_ airportManager: AirportManagerProtocol, _ coordinator: AirportsBaseCoordinator) {
+    private func setupViewModelBindings(_ airportManager: AirportManagerProtocol, _ coordinator: AirportBaseCoordinator) {
         
         airportManager.getAirports().sink { [weak self] completion in
             switch completion {
@@ -53,11 +53,12 @@ final class AirportsMapViewModel: AirportsMapBaseViewModel {
                 return
             }
             
-            if let nearestAirportRelation = AirportMapUtils.fetchNearestAirportInMeters(from: airport, to: annotations) {
+            if let nearestAirportRelation = AirportMapViewModelUtils.fetchNearestAirportInMeters(from: airport, to: annotations) {
                 coordinator.sendToAirportDetail(airport: airport, airportNearest: nearestAirportRelation)
+            } else {
+                self?.state = .error(MapError.noNearAirports)
             }
             
         }.store(in: &bindings)
     }
-    
 }

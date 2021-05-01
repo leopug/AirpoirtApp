@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class AirportManager: AirportManagerProtocol {
+final class AirportManager: AirportManagerProtocol {
     
     func getAirports() -> AnyPublisher<[Airport], Error> {
         var dataTask: URLSessionDataTask?
@@ -32,9 +32,8 @@ class AirportManager: AirportManagerProtocol {
                 
                 let response = response as! HTTPURLResponse
                 
-                let status = response.statusCode
-                guard (200...299).contains(status) else {
-                    promise(.failure(ApiError.urlRequest))
+                guard (200...299).contains(response.statusCode) else {
+                    promise(.failure(ApiError.networkProblem))
                     return
                 }
                 

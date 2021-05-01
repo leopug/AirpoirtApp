@@ -10,5 +10,6 @@ import Foundation
 enum ApiError: Error {
     case url(URLError)
     case urlRequest
+    case networkProblem
     case decode
 }

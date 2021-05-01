@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsCoordinator: SettingsBaseCoordinator {
+final class SettingsCoordinator: SettingsBaseCoordinator {
     
     var rootViewController: UIViewController?
     
@@ -17,6 +17,4 @@ class SettingsCoordinator: SettingsBaseCoordinator {
         rootViewController = navigationController
         return navigationController
     }
-    
-    
 }

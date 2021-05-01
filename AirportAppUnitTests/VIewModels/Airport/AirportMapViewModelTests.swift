@@ -17,7 +17,7 @@ class AirportMapViewModelTests: XCTestCase {
         sut = nil
     }
     
-    func test_AirportMapViewModel_ShouldReturnAnnotationPublisher() {
+    func test_ShouldReturnAnnotationPublisherWithThreeAirportAnnotations() {
         
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerSuccesfullReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         let expectation = XCTestExpectation(description: "Publishes until value isn't nil")
@@ -42,7 +42,7 @@ class AirportMapViewModelTests: XCTestCase {
         }
     }
     
-    func test_AirportMapViewModel_ShouldReturnAirportMapViewModelStatePublisher() {
+    func test_ShouldReturnAirportMapViewModelStatePublisher() {
         
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerSuccesfullReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         let expectation = XCTestExpectation(description: "Publishes until value isn't nil")
@@ -69,7 +69,7 @@ class AirportMapViewModelTests: XCTestCase {
         XCTAssertEqual(stateValues.count, 2)
     }
     
-    func test_AirportMapViewModel_ShouldTheFirstLoadingStateAlwaysBeLoading() {
+    func test_ShouldTheFirstLoadingStateAlwaysBeLoading() {
         
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerSuccesfullReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         let expectation = XCTestExpectation(description: "Publishes until value isn't nil")
@@ -101,7 +101,7 @@ class AirportMapViewModelTests: XCTestCase {
         }
     }
     
-    func test_AirportMapViewModel_ShouldTheSecondLoadingStateBeFinished() {
+    func test_ShouldTheSecondLoadingStateBeFinished() {
         
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerSuccesfullReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         let expectation = XCTestExpectation(description: "Publishes until value isn't nil")
@@ -133,7 +133,7 @@ class AirportMapViewModelTests: XCTestCase {
         }
     }
     
-    func test_AirportMapViewModel_AirportPassthroughtSubjectShouldNotSendErrorState() {
+    func test_AirportPassthroughtSubjectShouldNotSendErrorState() {
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerSuccesfullReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         
         let expectation = XCTestExpectation(description: "Should not be more than 1 state sended")
@@ -155,7 +155,6 @@ class AirportMapViewModelTests: XCTestCase {
         )
         .store(in: &bindings)
         
-        
         wait(for: [expectation], timeout: 1)
         
         print(stateValues,"💮💮💮💮")
@@ -167,7 +166,7 @@ class AirportMapViewModelTests: XCTestCase {
         XCTAssertEqual(stateValues.count, 2)
     }
     
-    func test_AirportMapViewModel_AirportPassthroughtSubjectShouldSendErrorState() {
+    func test_AirportPassthroughtSubjectShouldSendErrorState() {
         sut = AirportsMapViewModel(airportManager: AirportGenerator.generateAirportManagerEmptyReturn(), coordinator: AirportGenerator.generateAirportCoordinatorMock())
         
         let expectation = XCTestExpectation(description: "Should not be more than 1 state sended")
@@ -191,6 +190,4 @@ class AirportMapViewModelTests: XCTestCase {
                 
         XCTAssertEqual(stateValues.count, 2)
     }
-    
-    
 }

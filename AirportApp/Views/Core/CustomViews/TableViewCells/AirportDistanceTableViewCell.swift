@@ -62,5 +62,4 @@ class AirportDistanceTableViewCell: UITableViewCell {
         airportNameLabel.text = airportName
         airportDistanceLabel.text = airportDistanceInMeters.getFormattedDistance()
     }
-    
 }

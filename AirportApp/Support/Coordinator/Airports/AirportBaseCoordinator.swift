@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol AirportsBaseCoordinator: Coordinator {
+protocol AirportBaseCoordinator: Coordinator {
     func sendToAirportDetail(airport: Airport, airportNearest: AirportDistanceRelation)
 }

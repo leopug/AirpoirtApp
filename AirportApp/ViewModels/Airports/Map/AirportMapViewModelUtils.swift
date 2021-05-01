@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct AirportMapUtils {
+struct AirportMapViewModelUtils {
     static func fetchNearestAirportInMeters(from airport: Airport, to airportAnnotationList: [AirportAnnotation]) -> AirportDistanceRelation? {
         
         let airportLocation = CLLocation(latitude: airport.latitude, longitude: airport.longitude)

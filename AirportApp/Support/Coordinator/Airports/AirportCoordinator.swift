@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AirportsCoordinator: AirportsBaseCoordinator {
+final class AirportCoordinator: AirportBaseCoordinator {
     
     var rootViewController: UIViewController?
     

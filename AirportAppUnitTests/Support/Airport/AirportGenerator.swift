@@ -14,7 +14,7 @@ struct AirportGenerator {
     
     static func generateAirportManagerEmptyReturn() -> AirportManagerProtocol { AirportManagerEmptyListReturnMock() }
     
-    static func generateAirportCoordinatorMock() -> AirportsBaseCoordinator { AirportsCoordinatorMock() }
+    static func generateAirportCoordinatorMock() -> AirportBaseCoordinator { AirportsCoordinatorMock() }
     
     static func generateAirportListWithThreeElements() -> [Airport] {
         [Airport(id: "GRU", latitude: -23.4322, longitude: -46.4692, name: "Guarulhos Aeroporto", city: "Sao Paulo", countryId: "BR"),
@@ -57,7 +57,7 @@ extension AirportGenerator {
         }
     }
     
-    private struct AirportsCoordinatorMock: AirportsBaseCoordinator {
+    private struct AirportsCoordinatorMock: AirportBaseCoordinator {
         
         func sendToAirportDetail(airport: Airport, airportNearest: AirportDistanceRelation) {
             print("\(airport) \(airportNearest)")

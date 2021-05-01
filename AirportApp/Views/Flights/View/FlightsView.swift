@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class FlightsView: UIView {
+final class FlightsView: UIView {
     
     private var flightsTableView: UITableView!
     private var activityIndicationView: ActivityIndicatorView!

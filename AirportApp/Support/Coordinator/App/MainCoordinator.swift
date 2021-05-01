@@ -10,15 +10,12 @@ import UIKit
 final class MainCoordinator: MainBaseCoordinator {
     
     var settingsCoordinator: SettingsBaseCoordinator?
-    
-    var airportsCoordinator: AirportsBaseCoordinator?
-    
+    var airportsCoordinator: AirportBaseCoordinator?
     var flightsCoordinator: FlightsBaseCoordinator?
-    
     var rootViewController: UIViewController?
     
     func start() -> UIViewController {
-        airportsCoordinator = AirportsCoordinator()
+        airportsCoordinator = AirportCoordinator()
         flightsCoordinator = FlightsCoordinator()
         settingsCoordinator = SettingsCoordinator()
         guard let airportsCoordinator = airportsCoordinator,
