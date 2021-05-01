@@ -24,7 +24,6 @@ final class SettingsViewModel: SettingsBaseViewModel {
     private func setupViewModelBindings() {
         switchPassthroughSubject.sink { isOn in
             GlobalContext.isMilesSelected = isOn
-            print(GlobalContext.isMilesSelected)
         }.store(in: &bindings)
     }
     
